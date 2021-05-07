@@ -13,7 +13,7 @@ export class FlightService {
   flights: Flight[] = [];
   baseUrl = `http://www.angular.at/api`;
   // baseUrl = `http://localhost:3000`;
-  
+
   reqDelay = 1000;
 
   constructor(private http: HttpClient) {

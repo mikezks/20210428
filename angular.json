@@ -632,6 +632,45 @@
           }
         }
       }
+    },
+    "bonus-miles": {
+      "projectType": "library",
+      "root": "libs/bonus-miles",
+      "sourceRoot": "libs/bonus-miles/src",
+      "prefix": "flight-workspace",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/bonus-miles/tsconfig.lib.json",
+            "project": "libs/bonus-miles/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/bonus-miles/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/bonus-miles/src/**/*.ts",
+              "libs/bonus-miles/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/bonus-miles"
+          ],
+          "options": {
+            "jestConfig": "libs/bonus-miles/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
